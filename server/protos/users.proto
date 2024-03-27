@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service UserService {
+    rpc List (Empty) returns (UserList) {}
+    rpc Create (User) returns (User) {}
+}
+
+message Empty {}
+
+message User {
+    uint32 id = 1;
+    string name = 2;
+    uint32 age = 3;
+    bool test = 4;
+}
+
+message UserList {
+    repeated User users = 1;
+}

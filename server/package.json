@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.ts",
+    "compile": "npx grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=grpc_js:./protos --js_out=import_style=commonjs:./protos --grpc_out=grpc_js:./protos -I ./protos ./protos/*.proto"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.4",
+    "grpc": "^1.24.11",
+    "grpc-tools": "^1.10.0",
+    "grpc_tools_node_protoc_ts": "^5.0.0",
+    "nodemon": "^3.1.0",
+    "ts-node-dev": "^2.0.0",
+    "typecript": "^0.0.1-security",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
